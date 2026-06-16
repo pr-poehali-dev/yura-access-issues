@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-const PORTRAIT = 'https://cdn.poehali.dev/projects/70500ac7-4205-40a6-a8ca-f68d5c5b9512/files/85a7d910-9e54-497c-8a57-8674b0feb88f.jpg';
+const PORTRAIT = 'https://cdn.poehali.dev/projects/70500ac7-4205-40a6-a8ca-f68d5c5b9512/bucket/9ca257fb-2b00-494c-99a6-38a357e8c394.JPEG';
 
 const nav = [
   { id: 'home', label: 'Главная' },
@@ -47,7 +47,7 @@ const Index = () => {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
         <div className="container flex items-center justify-between h-20">
           <button onClick={() => scrollTo('home')} className="font-serif text-2xl tracking-tight">
-            Анна<span className="text-primary"> Светлова</span>
+            Валентина<span className="text-primary"> Голосова</span>
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
@@ -95,7 +95,7 @@ const Index = () => {
           </div>
           <div className="reveal relative" style={{ animationDelay: '0.3s' }}>
             <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/10 -rotate-3" />
-            <img src={PORTRAIT} alt="Психолог Анна Светлова" className="relative rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl" />
+            <img src={PORTRAIT} alt="Психолог Валентина Голосова" className="relative rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl" />
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-lg px-6 py-4 border border-border">
               <p className="font-serif text-3xl text-primary">8 лет</p>
               <p className="text-xs text-muted-foreground">в частной практике</p>
@@ -112,7 +112,7 @@ const Index = () => {
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">Рядом, пока вы ищете свой путь</h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-lg text-muted-foreground">
-            <p>Меня зовут Анна. Я клинический психолог и гештальт-терапевт. Верю, что в тёплой и безопасной атмосфере человек способен бережно встретиться с собой настоящим.</p>
+            <p>Меня зовут Валентина. Я клинический психолог и гештальт-терапевт. Верю, что в тёплой и безопасной атмосфере человек способен бережно встретиться с собой настоящим.</p>
             <p>В работе опираюсь на гуманистический подход: никакого давления и готовых ответов — только внимательное сопровождение в вашем собственном темпе.</p>
             <div className="grid grid-cols-3 gap-6 pt-4">
               {[['500+', 'консультаций'], ['98%', 'возвращаются'], ['онлайн', 'и очно в СПб']].map(([a, b]) => (
@@ -227,7 +227,7 @@ const Index = () => {
       <footer id="contacts" className="bg-primary text-primary-foreground py-14">
         <div className="container grid md:grid-cols-3 gap-8 items-center">
           <div>
-            <p className="font-serif text-2xl mb-2">Анна Светлова</p>
+            <p className="font-serif text-2xl mb-2">Валентина Голосова</p>
             <p className="text-primary-foreground/70 text-sm">Психолог · гештальт-терапевт</p>
           </div>
           <div className="flex md:justify-center gap-4">
