@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
-
-const SEND_EMAIL_URL = 'https://functions.poehali.dev/2453d09c-76fd-45c2-96fc-7ba5b95bfec9';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import Blog from '@/pages/Blog';
+import { articles } from '@/data/articles';
+
+const SEND_EMAIL_URL = 'https://functions.poehali.dev/2453d09c-76fd-45c2-96fc-7ba5b95bfec9';
 
 const PORTRAIT = 'https://cdn.poehali.dev/projects/70500ac7-4205-40a6-a8ca-f68d5c5b9512/bucket/9ca257fb-2b00-494c-99a6-38a357e8c394.JPEG';
 
@@ -46,8 +48,11 @@ const scrollTo = (id: string) => {
 
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showBlog, setShowBlog] = useState(false);
   const [form, setForm] = useState({ name: '', contact: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  if (showBlog) return <Blog onBack={() => setShowBlog(false)} />;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -197,27 +202,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* BLOG / VLOG */}
+      {/* BLOG */}
       <section id="blog" className="py-24">
         <div className="container">
           <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
             <div>
-              <p className="font-hand text-2xl text-accent mb-2">мысли вслух</p>
-              <h2 className="font-serif text-4xl md:text-5xl">Влог</h2>
+              <p className="font-hand text-2xl text-accent mb-2">мысли и практики</p>
+              <h2 className="font-serif text-4xl md:text-5xl">Статьи</h2>
             </div>
-            <Button variant="ghost" className="rounded-full">Все записи <Icon name="ArrowRight" size={18} className="ml-1" /></Button>
+            <Button variant="ghost" className="rounded-full" onClick={() => setShowBlog(true)}>
+              Все статьи <Icon name="ArrowRight" size={18} className="ml-1" />
+            </Button>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <article key={post.title} className="group cursor-pointer">
-                <div className="rounded-3xl bg-gradient-to-br from-primary/15 to-accent/15 aspect-video mb-5 flex items-center justify-center relative overflow-hidden">
-                  <div className="w-16 h-16 rounded-full bg-card/80 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon name="Play" size={24} className="text-primary ml-1" />
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {articles.slice(0, 3).map((article) => (
+              <article key={article.id} className="group cursor-pointer" onClick={() => setShowBlog(true)}>
+                <div className="rounded-3xl overflow-hidden mb-5 aspect-[4/3]">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <span className="text-xs uppercase tracking-wider text-accent font-medium">{post.tag}</span>
-                <h3 className="font-serif text-2xl mt-1 mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
-                <p className="text-sm text-muted-foreground">{post.date} · {post.read}</p>
+                <span className="text-xs uppercase tracking-wider text-accent font-medium">{article.tag}</span>
+                <h3 className="font-serif text-2xl mt-1 mb-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
+                <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{article.excerpt}</p>
+                <p className="text-xs text-muted-foreground">{article.date} · {article.readTime}</p>
               </article>
             ))}
           </div>
