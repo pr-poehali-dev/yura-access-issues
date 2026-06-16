@@ -231,7 +231,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-3 gap-8 items-center">
           <div>
             <p className="font-serif text-2xl mb-2">Валентина Голосова</p>
-            <p className="text-primary-foreground/70 text-sm">Психолог · гештальт-терапевт</p>
+            <p className="text-primary-foreground/70 text-sm">Психолог · гештальт, КПТ-терапевт</p>
           </div>
           <div className="flex md:justify-center gap-4">
             {['Send', 'Instagram', 'Youtube'].map((i) => (
