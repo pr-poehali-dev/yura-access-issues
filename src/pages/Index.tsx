@@ -204,7 +204,7 @@ const Index = () => {
             <h2 className="font-serif text-4xl md:text-5xl mb-5">Запись на консультацию</h2>
             <p className="text-lg text-muted-foreground mb-8">Оставьте заявку — я свяжусь с вами в течение дня, чтобы подобрать удобное время. Всё конфиденциально и без обязательств.</p>
             <div className="space-y-4">
-              {[['Phone', '+7 (900) 123-45-67'], ['Mail', 'hello@svetlova.ru'], ['MapPin', 'Санкт-Петербург · онлайн по всему миру']].map(([icon, text]) => (
+              {[['Phone', '+7 932 416 57 41'], ['Mail', 'melni-v@yandex.ru'], ['MapPin', 'Москва · онлайн по всему миру']].map(([icon, text]) => (
                 <div key={text} className="flex items-center gap-3 text-muted-foreground">
                   <Icon name={icon} size={20} className="text-primary" />
                   <span>{text}</span>
