@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+
+const SEND_EMAIL_URL = 'https://functions.poehali.dev/2453d09c-76fd-45c2-96fc-7ba5b95bfec9';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -44,6 +46,28 @@ const scrollTo = (id: string) => {
 
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', contact: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const res = await fetch(SEND_EMAIL_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setForm({ name: '', contact: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground paper-grain selection:bg-accent/30">
@@ -216,11 +240,40 @@ const Index = () => {
               ))}
             </div>
           </div>
-          <form className="bg-card rounded-3xl p-8 border border-border shadow-lg space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <Input placeholder="Ваше имя" className="rounded-xl h-12" />
-            <Input placeholder="Телефон или e-mail" className="rounded-xl h-12" />
-            <Textarea placeholder="Коротко о вашем запросе (необязательно)" className="rounded-xl min-h-28" />
-            <Button type="submit" size="lg" className="rounded-full w-full">Отправить заявку</Button>
+          <form className="bg-card rounded-3xl p-8 border border-border shadow-lg space-y-4" onSubmit={handleSubmit}>
+            <Input
+              placeholder="Ваше имя"
+              className="rounded-xl h-12"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              required
+            />
+            <Input
+              placeholder="Телефон или e-mail"
+              className="rounded-xl h-12"
+              value={form.contact}
+              onChange={(e) => setForm({ ...form, contact: e.target.value })}
+              required
+            />
+            <Textarea
+              placeholder="Коротко о вашем запросе (необязательно)"
+              className="rounded-xl min-h-28"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+            />
+            {status === 'success' && (
+              <div className="rounded-xl bg-primary/10 text-primary px-4 py-3 text-sm text-center">
+                Заявка отправлена! Валентина свяжется с вами в течение дня 🌿
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="rounded-xl bg-destructive/10 text-destructive px-4 py-3 text-sm text-center">
+                Что-то пошло не так. Попробуйте позвонить напрямую.
+              </div>
+            )}
+            <Button type="submit" size="lg" className="rounded-full w-full" disabled={status === 'loading'}>
+              {status === 'loading' ? 'Отправляем...' : 'Отправить заявку'}
+            </Button>
             <p className="text-xs text-muted-foreground text-center">Нажимая кнопку, вы соглашаетесь с обработкой данных</p>
           </form>
         </div>
