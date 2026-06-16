@@ -97,8 +97,7 @@ const Index = () => {
             <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/10 -rotate-3" />
             <img src={PORTRAIT} alt="Психолог Валентина Голосова" className="relative rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl" />
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-lg px-6 py-4 border border-border">
-              <p className="font-serif text-3xl text-primary">8 лет</p>
-              <p className="text-xs text-muted-foreground">в частной практике</p>
+              <p className="font-serif text-lg text-primary">Частная практика</p>
             </div>
           </div>
         </div>
