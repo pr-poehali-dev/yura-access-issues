@@ -19,6 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				serif: ['Cormorant', 'serif'],
+				sans: ['Golos Text', 'sans-serif'],
+				hand: ['Caveat', 'cursive']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
