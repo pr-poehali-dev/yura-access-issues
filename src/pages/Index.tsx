@@ -27,9 +27,9 @@ const services = [
 ];
 
 const prices = [
-  { title: 'Первая встреча', price: '2 500 ₽', note: '60 минут · знакомство и запрос', highlight: false },
-  { title: 'Индивидуальная сессия', price: '4 000 ₽', note: '60 минут · регулярная работа', highlight: true },
-  { title: 'Семейная сессия', price: '5 500 ₽', note: '90 минут · для пары или семьи', highlight: false },
+  { title: 'Первая встреча', price: '3 000 ₽', note: '50 минут · знакомство и запрос', highlight: false },
+  { title: 'Индивидуальная сессия', price: '5 000 ₽', note: '50 минут · регулярная работа', highlight: true },
+  { title: 'Пакет 5 сессий', price: '23 000 ₽', note: '50 минут · экономия 2 000 ₽', highlight: false },
 ];
 
 const posts = [
