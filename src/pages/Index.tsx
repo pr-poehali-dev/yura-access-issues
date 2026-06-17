@@ -110,12 +110,14 @@ const Index = () => {
       <section id="home" className="pt-36 pb-24 md:pt-44 md:pb-32">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal" style={{ animationDelay: '0.1s' }}>
-            <span
-              className="font-hand text-3xl text-primary/60 select-none"
-              style={{ transform: 'rotate(-6deg)', transformOrigin: 'left center', display: 'inline-block', marginBottom: '0.5rem' }}
-            >
-              Бережная терапия
-            </span>
+            <div className="flex justify-center mb-1">
+              <span
+                className="font-hand text-3xl text-primary/60 select-none"
+                style={{ transform: 'rotate(-6deg)', display: 'inline-block' }}
+              >
+                Бережная терапия
+              </span>
+            </div>
             <p className="font-hand text-2xl text-accent mb-4">психолог и психотерапевт · Москва и онлайн</p>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-6">
               Помощь при тревоге, депрессии и выгорании
