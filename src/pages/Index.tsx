@@ -15,19 +15,19 @@ const nav = [
   { id: 'about', label: 'Обо мне' },
   { id: 'services', label: 'Услуги' },
   { id: 'prices', label: 'Цены' },
-  { id: 'blog', label: 'Влог' },
+  { id: 'blog', label: 'Статьи' },
   { id: 'contacts', label: 'Контакты' },
 ];
 
 const services = [
-  { icon: 'BrainCircuit', title: 'Тревога и страхи', text: 'КПТ-работа с тревожными мыслями, паническими атаками и навязчивыми состояниями.' },
-  { icon: 'CloudRain', title: 'Депрессия и апатия', text: 'Помогаю вернуть интерес к жизни через работу с негативными убеждениями и поведенческую активацию.' },
-  { icon: 'Sparkles', title: 'Самооценка и перфекционизм', text: 'Выявляем установки, которые мешают принять себя, и формируем более здоровый внутренний диалог.' },
-  { icon: 'HeartHandshake', title: 'Стресс и выгорание', text: 'Учимся распознавать триггеры, перестраивать реакции и восстанавливать ресурс.' },
-  { icon: 'Compass', title: 'Личностный путь', text: 'Мягкое сопровождение в поиске себя — своих ценностей, желаний и направления, в котором хочется идти.' },
-  { icon: 'Wind', title: 'Работа с тревогой', text: 'В гештальт-подходе тревога — это энергия, которой не нашлось выхода. Вместе мы ищем, что за ней стоит.' },
-  { icon: 'Moon', title: 'Состояния ничтожности', text: 'Бережная работа с ощущением пустоты, стыда и «меня нет» — возвращение к себе через контакт и принятие.' },
-  { icon: 'DoorOpen', title: 'Личные границы', text: 'Учимся чувствовать и обозначать границы без вины и агрессии — из места внутренней устойчивости.' },
+  { icon: 'BrainCircuit', title: 'Тревога и панические атаки', text: 'Психотерапевтическая помощь при тревожных расстройствах, паническом синдроме и навязчивых мыслях. Методы КПТ и гештальт.' },
+  { icon: 'CloudRain', title: 'Депрессия и апатия', text: 'Помогаю выйти из депрессии: возвращаю интерес к жизни, работаю с негативными убеждениями и упадком сил.' },
+  { icon: 'Sparkles', title: 'Самооценка и самопринятие', text: 'Работа с перфекционизмом, внутренним критиком и установками, которые мешают принять себя и жить в полную силу.' },
+  { icon: 'HeartHandshake', title: 'Стресс и выгорание', text: 'Психологическая помощь при хроническом стрессе и профессиональном выгорании. Восстанавливаем ресурс и внутренние опоры.' },
+  { icon: 'Compass', title: 'Поиск себя и смысла', text: 'Сопровождение в личностном кризисе, поиске ценностей и направления. Когда непонятно, кто я и чего хочу.' },
+  { icon: 'Wind', title: 'Психосоматика и тело', text: 'Работа с телесными реакциями на стресс. Тревога часто говорит через тело — учимся её слышать и отпускать.' },
+  { icon: 'Moon', title: 'Стыд и ощущение пустоты', text: 'Бережная психотерапия при глубоком стыде, ощущении «меня нет» и внутренней пустоте. Возвращение к себе.' },
+  { icon: 'DoorOpen', title: 'Личные границы и отношения', text: 'Помогаю выстроить здоровые границы, наладить близость и научиться говорить «нет» без вины и тревоги.' },
 ];
 
 const prices = [
@@ -110,12 +110,12 @@ const Index = () => {
       <section id="home" className="pt-36 pb-24 md:pt-44 md:pb-32">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal" style={{ animationDelay: '0.1s' }}>
-            <p className="font-hand text-2xl text-accent mb-4">пространство тепла и принятия</p>
+            <p className="font-hand text-2xl text-accent mb-4">психолог и психотерапевт · Москва и онлайн</p>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-6">
-              Бережная терапия для&nbsp;возвращения к&nbsp;себе
+              Помощь при тревоге, депрессии и выгорании
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-8">
-              Помогаю прожить тревогу, найти внутреннюю опору и услышать собственные желания — в спокойном ритме и без осуждения.
+              Психотерапевт Валентина Голосова — помогаю справиться с тревогой, выйти из депрессии, преодолеть выгорание и научиться помогать себе самостоятельно.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button onClick={() => scrollTo('booking')} size="lg" className="rounded-full">
@@ -128,7 +128,7 @@ const Index = () => {
           </div>
           <div className="reveal relative" style={{ animationDelay: '0.3s' }}>
             <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/10 -rotate-3" />
-            <img src={PORTRAIT} alt="Психолог Валентина Голосова" className="relative rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl" />
+            <img src={PORTRAIT} alt="Психолог и психотерапевт Валентина Голосова — консультации по тревоге и депрессии в Москве и онлайн" className="relative rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl" />
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-lg px-6 py-4 border border-border">
               <p className="font-serif text-lg text-primary">Частная практика</p>
             </div>
@@ -141,11 +141,12 @@ const Index = () => {
         <div className="container grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-5">
             <p className="font-hand text-2xl text-accent mb-2">обо мне</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Рядом, пока вы ищете свой путь</h2>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">Психолог и психотерапевт с частной практикой в Москве</h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-lg text-muted-foreground">
-            <p>Меня зовут Валентина. Я психолог. Верю, что в тёплой и безопасной атмосфере человек способен бережно встретиться с собой настоящим.</p>
-            <p>Гештальт, КПТ, транзактный анализ, мета-персональная терапия.</p>
+            <p>Меня зовут Валентина. Я психолог и психотерапевт. Специализируюсь на работе с тревогой, депрессией, выгоранием и кризисными состояниями. Принимаю очно в Москве и онлайн — по всему миру.</p>
+            <p>В работе сочетаю методы гештальт-терапии, когнитивно-поведенческой терапии (КПТ), транзактного анализа и мета-персональной терапии — подбираю подход под каждого человека и его запрос.</p>
+            <p>Верю, что в безопасной атмосфере любой человек способен найти опору внутри себя и научиться помогать себе самостоятельно.</p>
             <div className="grid grid-cols-3 gap-6 pt-4">
               {[['500+', 'консультаций'], ['98%', 'возвращаются'], ['онлайн', 'и очно в МСК']].map(([a, b]) => (
                 <div key={b}>
@@ -162,8 +163,8 @@ const Index = () => {
       <section id="services" className="py-24">
         <div className="container">
           <div className="text-center mb-14">
-            <p className="font-hand text-2xl text-accent mb-2">чем я могу помочь</p>
-            <h2 className="font-serif text-4xl md:text-5xl">Услуги</h2>
+            <p className="font-hand text-2xl text-accent mb-2">психологическая помощь</p>
+            <h2 className="font-serif text-4xl md:text-5xl">С чем я работаю</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
@@ -238,9 +239,9 @@ const Index = () => {
       <section id="booking" className="py-24 bg-primary/5">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="font-hand text-2xl text-accent mb-2">сделайте первый шаг</p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-5">Запись на консультацию</h2>
-            <p className="text-lg text-muted-foreground mb-8">Оставьте заявку — я свяжусь с вами в течение дня, чтобы подобрать удобное время. Всё конфиденциально и без обязательств.</p>
+            <p className="font-hand text-2xl text-accent mb-2">первый шаг к себе</p>
+            <h2 className="font-serif text-4xl md:text-5xl mb-5">Записаться к психологу</h2>
+            <p className="text-lg text-muted-foreground mb-8">Оставьте заявку — я свяжусь с вами в течение дня. Консультация психолога онлайн или очно в Москве. Всё конфиденциально, без осуждения и без обязательств.</p>
             <div className="space-y-4">
               {[['Phone', '+7 932 416 57 41'], ['Mail', 'melni-v@yandex.ru'], ['MapPin', 'Москва · онлайн по всему миру']].map(([icon, text]) => (
                 <div key={text} className="flex items-center gap-3 text-muted-foreground">

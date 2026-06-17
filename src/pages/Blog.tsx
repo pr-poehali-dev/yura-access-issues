@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { articles } from '@/data/articles';
 import ArticlePage from '@/pages/ArticlePage';
 import Icon from '@/components/ui/icon';
@@ -16,6 +16,26 @@ const Blog = ({ onBack }: BlogProps) => {
 
   const filtered = activeTag === 'Все' ? articles : articles.filter(a => a.tag === activeTag);
   const article = openArticle ? articles.find(a => a.id === openArticle) : null;
+
+  useEffect(() => {
+    if (article) {
+      document.title = `${article.title} — Валентина Голосова, психолог`;
+      document.querySelector('meta[name="description"]')?.setAttribute('content',
+        `${article.excerpt} Психолог и психотерапевт Валентина Голосова — консультации онлайн и в Москве.`
+      );
+    } else {
+      document.title = 'Статьи о психологии — тревога, депрессия, выгорание | Валентина Голосова';
+      document.querySelector('meta[name="description"]')?.setAttribute('content',
+        'Статьи психолога Валентины Голосовой: как справиться с тревогой, депрессией и выгоранием, как помочь себе самостоятельно. Практические советы и психологические практики.'
+      );
+    }
+    return () => {
+      document.title = 'Валентина Голосова — психолог, психотерапевт в Москве | Тревога, депрессия, выгорание';
+      document.querySelector('meta[name="description"]')?.setAttribute('content',
+        'Психолог и психотерапевт Валентина Голосова — помощь при тревоге, депрессии, выгорании. Гештальт, КПТ, транзактный анализ. Онлайн и очно в Москве. Первая консультация от 3 000 ₽.'
+      );
+    };
+  }, [article]);
 
   if (article) {
     return <ArticlePage article={article} onBack={() => setOpenArticle(null)} />;
@@ -38,10 +58,10 @@ const Blog = ({ onBack }: BlogProps) => {
       <div className="container py-16">
         {/* Hero */}
         <div className="mb-12">
-          <p className="font-hand text-2xl text-accent mb-2">мысли и практики</p>
-          <h1 className="font-serif text-5xl md:text-6xl mb-4">Статьи</h1>
+          <p className="font-hand text-2xl text-accent mb-2">психология · практики · самопомощь</p>
+          <h1 className="font-serif text-5xl md:text-6xl mb-4">Статьи о психологии</h1>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Тексты о психологии, которые помогают лучше понять себя — без сложных терминов и с уважением к вашему опыту.
+            Тексты о тревоге, депрессии, выгорании и отношениях — как помочь себе самостоятельно и когда стоит обратиться к психотерапевту.
           </p>
         </div>
 
@@ -103,9 +123,9 @@ const Blog = ({ onBack }: BlogProps) => {
       {/* CTA */}
       <section className="bg-primary/5 border-t border-border py-16">
         <div className="container text-center">
-          <p className="font-hand text-2xl text-accent mb-2">готовы к разговору?</p>
-          <h2 className="font-serif text-4xl mb-4">Запишитесь на консультацию</h2>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">Статьи — это начало пути. Терапия — это путь.</p>
+          <p className="font-hand text-2xl text-accent mb-2">нужна личная помощь?</p>
+          <h2 className="font-serif text-4xl mb-4">Запишитесь к психологу</h2>
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto">Статьи помогают понять себя. Психотерапия — изменить то, что не получается изменить в одиночку.</p>
           <Button onClick={onBack} size="lg" className="rounded-full">Записаться к Валентине</Button>
         </div>
       </section>
