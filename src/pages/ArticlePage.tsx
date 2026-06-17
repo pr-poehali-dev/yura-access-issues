@@ -69,7 +69,7 @@ const ArticlePage = ({ article, onBack }: ArticlePageProps) => {
           </div>
           <div>
             <p className="font-serif text-xl mb-1">Валентина Голосова</p>
-            <p className="text-sm text-muted-foreground mb-3">Психолог · гештальт, КПТ-терапевт</p>
+            <p className="text-sm text-muted-foreground mb-3">в своей работе использую методики гештальт, КПТ, транзактный анализ, мета-персональная терапия</p>
             <p className="text-muted-foreground text-sm">Если статья откликнулась и вы хотите поговорить о своём опыте — я здесь.</p>
           </div>
         </div>
