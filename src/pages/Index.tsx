@@ -110,13 +110,13 @@ const Index = () => {
       <section id="home" className="pt-36 pb-24 md:pt-44 md:pb-32">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal" style={{ animationDelay: '0.1s' }}>
-            <p className="font-hand text-2xl text-accent mb-4">психолог и психотерапевт · Москва и онлайн</p>
             <span
-              className="inline-block font-hand text-3xl text-primary/30 mb-1 select-none"
-              style={{ transform: 'rotate(-6deg)', transformOrigin: 'left center', display: 'block', marginBottom: '0.25rem' }}
+              className="font-hand text-3xl text-primary/60 select-none"
+              style={{ transform: 'rotate(-6deg)', transformOrigin: 'left center', display: 'inline-block', marginBottom: '0.5rem' }}
             >
               Бережная терапия
             </span>
+            <p className="font-hand text-2xl text-accent mb-4">психолог и психотерапевт · Москва и онлайн</p>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-6">
               Помощь при тревоге, депрессии и выгорании
             </h1>
