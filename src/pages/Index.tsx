@@ -79,8 +79,9 @@ const Index = () => {
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
         <div className="container flex items-center justify-between h-20">
-          <button onClick={() => scrollTo('home')} className="font-serif text-2xl tracking-tight">
-            Валентина<span className="text-primary"> Голосова</span>
+          <button onClick={() => scrollTo('home')} className="font-serif text-2xl tracking-tight flex flex-col items-start leading-tight">
+            <span>Валентина<span className="text-primary"> Голосова</span></span>
+            <span className="font-hand text-sm text-muted-foreground font-normal" style={{ transform: 'rotate(-3deg)', display: 'inline-block', transformOrigin: 'left center' }}>Бережная терапия</span>
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
@@ -110,14 +111,6 @@ const Index = () => {
       <section id="home" className="pt-36 pb-24 md:pt-44 md:pb-32">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal" style={{ animationDelay: '0.1s' }}>
-            <div className="flex justify-center mb-1">
-              <span
-                className="font-hand text-3xl text-primary/60 select-none"
-                style={{ transform: 'rotate(-6deg)', display: 'inline-block' }}
-              >
-                Бережная терапия
-              </span>
-            </div>
             <p className="font-hand text-2xl text-accent mb-4">психолог и психотерапевт · Москва и онлайн</p>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-6">
               Помощь при тревоге, депрессии и выгорании
