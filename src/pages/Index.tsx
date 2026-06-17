@@ -31,7 +31,7 @@ const services = [
 ];
 
 const prices = [
-  { title: 'Первая встреча', price: '3 000 ₽', note: '50 минут · знакомство и запрос', highlight: false },
+  { title: 'Пакет 10 сессий', price: '46 000 ₽', note: '50 минут · выгодный формат работы', highlight: false },
   { title: 'Индивидуальная сессия', price: '5 000 ₽', note: '50 минут · регулярная работа', highlight: true },
   { title: 'Пакет 5 сессий', price: '23 000 ₽', note: '50 минут · экономия 2 000 ₽', highlight: false },
 ];
