@@ -81,7 +81,7 @@ const Index = () => {
         <div className="container flex items-center justify-between h-20">
           <button onClick={() => scrollTo('home')} className="font-serif text-2xl tracking-tight flex flex-col items-start leading-tight">
             <span>Валентина<span className="text-primary"> Голосова</span></span>
-            <span className="font-hand text-lg text-muted-foreground font-normal">Бережная терапия</span>
+            <span className="font-hand text-xl text-muted-foreground font-normal">Бережная терапия</span>
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
