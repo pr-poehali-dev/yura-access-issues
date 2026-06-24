@@ -31,9 +31,9 @@ const services = [
 ];
 
 const prices = [
-  { title: 'Пакет 10 сессий', price: '46 000 ₽', note: '50 минут · выгодный формат работы', highlight: false },
-  { title: 'Индивидуальная сессия', price: '5 000 ₽', note: '50 минут · регулярная работа', highlight: true },
-  { title: 'Пакет 5 сессий', price: '23 000 ₽', note: '50 минут · экономия 2 000 ₽', highlight: false },
+  { title: 'Индивидуальная сессия', price: '15 000 ₽', note: 'Единичный запрос', highlight: false },
+  { title: 'Индивидуальная сессия', price: '10 000 ₽', note: 'При длительной терапии', highlight: true },
+  { title: 'Пакет 10 сессий', price: '90 000 ₽', note: 'Выгодный формат работы', highlight: false },
 ];
 
 const posts = [
